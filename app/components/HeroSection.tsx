@@ -137,7 +137,7 @@ export default function HeroSection() {
       id="home"
       className="relative flex flex-col justify-center section-padding pt-36 md:pt-40 pb-0"
     >
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-10 xl:px-16">
         {/* Main hero content */}
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
           {/* Left: Text Content */}

@@ -28,7 +28,7 @@ export default function Footer() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 xl:px-16 flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Left: Copyright */}
         <p className="text-xs text-[#4a5c74] text-center sm:text-left">
           © {currentYear}{" "}

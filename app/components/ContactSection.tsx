@@ -63,7 +63,7 @@ function MapDecoration() {
 export default function ContactSection() {
   return (
     <section id="contact" className="section-padding">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 xl:px-16">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           {/* Left: Title & Info */}
           <motion.div

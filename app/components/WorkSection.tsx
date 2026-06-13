@@ -19,7 +19,7 @@ export default function WorkSection() {
 
   return (
     <section id="work" className="section-padding">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 xl:px-16">
         {/* Section layout: left column + right grid */}
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
           {/* Left: Title & Description */}

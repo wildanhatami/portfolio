@@ -63,7 +63,7 @@ export default function FeaturedProjects() {
 
   return (
     <section className="section-padding">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 xl:px-16">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
