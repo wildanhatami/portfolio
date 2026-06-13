@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050f1e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a1628;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)" rx="400"/>
+  <circle cx="400" cy="400" r="380" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.3"/>
+  <circle cx="400" cy="300" r="120" fill="url(#accent)" opacity="0.15"/>
+  <ellipse cx="400" cy="560" rx="200" ry="140" fill="url(#accent)" opacity="0.1"/>
+  <text x="400" y="380" font-family="Arial,sans-serif" font-size="80" font-weight="bold" fill="url(#accent)" text-anchor="middle" dominant-baseline="middle">WH</text>
+  <text x="400" y="460" font-family="Arial,sans-serif" font-size="18" fill="#8ca0bc" text-anchor="middle" dominant-baseline="middle">Upload your photo here</text>
+  <text x="400" y="490" font-family="Arial,sans-serif" font-size="13" fill="#4a5c74" text-anchor="middle">public/images/profile.jpg</text>
+</svg>
