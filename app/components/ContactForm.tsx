@@ -65,49 +65,65 @@ export default function ContactForm() {
     if (!validate()) return;
 
     setIsSubmitting(true);
+    setStatus("idle");
 
-    /**
-     * ──────────────────────────────────────────────────────────
-     * CONTACT FORM INTEGRATION POINT
-     * ──────────────────────────────────────────────────────────
-     * Currently uses mailto: as a fallback.
-     * To integrate with EmailJS, Resend, or an API route:
-     *
-     * 1. EmailJS:
-     *    import emailjs from '@emailjs/browser';
-     *    await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY);
-     *
-     * 2. API Route (Next.js):
-     *    const res = await fetch('/api/contact', {
-     *      method: 'POST',
-     *      body: JSON.stringify(formData),
-     *    });
-     *
-     * 3. Resend:
-     *    const res = await fetch('/api/contact', { ... });
-     * ──────────────────────────────────────────────────────────
-     */
+    const isWeb3FormsActive =
+      profile.web3FormsAccessKey &&
+      profile.web3FormsAccessKey !== "" &&
+      !profile.web3FormsAccessKey.startsWith("YOUR_");
 
-    // Fallback: open mailto
-    try {
-      const subject = encodeURIComponent(
-        `Portfolio Contact from ${formData.name}`
-      );
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      );
-      window.open(
-        `mailto:${profile.email}?subject=${subject}&body=${body}`,
-        "_blank"
-      );
-      setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-    } catch {
-      setStatus("error");
-    } finally {
-      setIsSubmitting(false);
-      // Reset status after 5s
-      setTimeout(() => setStatus("idle"), 5000);
+    if (isWeb3FormsActive) {
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: profile.web3FormsAccessKey,
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            subject: `Portfolio Contact from ${formData.name}`,
+            from_name: "Portfolio Website",
+          }),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          setStatus("success");
+          setFormData({ name: "", email: "", message: "" });
+        } else {
+          setStatus("error");
+        }
+      } catch {
+        setStatus("error");
+      } finally {
+        setIsSubmitting(false);
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } else {
+      // Fallback: open mailto
+      try {
+        const subject = encodeURIComponent(
+          `Portfolio Contact from ${formData.name}`
+        );
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        );
+        window.open(
+          `mailto:${profile.email}?subject=${subject}&body=${body}`,
+          "_blank"
+        );
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } catch {
+        setStatus("error");
+      } finally {
+        setIsSubmitting(false);
+        setTimeout(() => setStatus("idle"), 5000);
+      }
     }
   };
 
@@ -262,7 +278,11 @@ export default function ContactForm() {
         ) : status === "success" ? (
           <span className="flex items-center gap-2">
             <CheckCircle size={16} />
-            Sent! Check your email client
+            {profile.web3FormsAccessKey &&
+            profile.web3FormsAccessKey !== "" &&
+            !profile.web3FormsAccessKey.startsWith("YOUR_")
+              ? "Message Sent!"
+              : "Sent! Check your email client"}
           </span>
         ) : (
           <span className="flex items-center gap-2">

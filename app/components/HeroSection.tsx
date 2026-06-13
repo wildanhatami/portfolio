@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, FileText } from "lucide-react";
 import { profile } from "@/app/data/profile";
 
 const fadeUpVariant = {
@@ -266,6 +266,33 @@ export default function HeroSection() {
                   Get In Touch
                 </span>
               </button>
+
+              {/* CV Download button */}
+              <a
+                href="/cv-muhammad-wildan-hatami.pdf"
+                download
+                className="group px-7 py-3 rounded-xl font-semibold text-sm text-[#e2eaf4] transition-all duration-300 hover:scale-[1.02] hover:text-white flex items-center justify-center gap-2"
+                style={{
+                  background: "rgba(168,85,247,0.05)",
+                  border: "1px solid rgba(168,85,247,0.25)",
+                  boxShadow: "0 0 0 0 rgba(168,85,247,0)",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                    "0 0 16px rgba(168,85,247,0.15)";
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                    "rgba(168,85,247,0.5)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                    "0 0 0 0 rgba(168,85,247,0)";
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                    "rgba(168,85,247,0.25)";
+                }}
+              >
+                <FileText size={16} className="text-[#a855f7]" />
+                <span>Download CV</span>
+              </a>
             </motion.div>
           </div>
 

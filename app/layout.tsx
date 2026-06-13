@@ -35,10 +35,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "id_ID",
+    url: "https://portfolio-wildanhatami.vercel.app",
     title: "Muhammad Wildan Hatami — Portfolio",
     description:
       "Portfolio pribadi Muhammad Wildan Hatami. Computer Science Student & Web Developer.",
     siteName: "Wildan Hatami Portfolio",
+    images: [
+      {
+        url: "https://portfolio-wildanhatami.vercel.app/images/profile.jpg",
+        width: 800,
+        height: 800,
+        alt: "Muhammad Wildan Hatami",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Muhammad Wildan Hatami — Portfolio",
+    description:
+      "Portfolio pribadi Muhammad Wildan Hatami. Computer Science Student & Web Developer.",
+    images: ["https://portfolio-wildanhatami.vercel.app/images/profile.jpg"],
   },
   robots: {
     index: true,
