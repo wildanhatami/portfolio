@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { skills } from "@/app/data/skills";
+import { useTheme } from "@/app/context/ThemeContext";
 
 import {
   SiHtml5,
@@ -32,6 +33,8 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export default function SkillsGrid() {
+  const { theme } = useTheme();
+
   return (
     <div>
       <h3
@@ -42,6 +45,9 @@ export default function SkillsGrid() {
       </h3>
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-3">
         {skills.map((skill, i) => {
+          const isTargetSkill = skill.id === "nextjs" || skill.id === "github";
+          const skillColor = theme === "light" && isTargetSkill ? "#000000" : skill.color;
+
           const IconComponent =
             skill.iconType === "react-icon" && skill.iconKey
               ? iconMap[skill.iconKey]
@@ -62,9 +68,9 @@ export default function SkillsGrid() {
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
-                el.style.borderColor = `${skill.color}60`;
-                el.style.boxShadow = `0 0 12px ${skill.color}25`;
-                el.style.background = `${skill.color}10`;
+                el.style.borderColor = `${skillColor}60`;
+                el.style.boxShadow = `0 0 12px ${skillColor}25`;
+                el.style.background = `${skillColor}10`;
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
@@ -75,9 +81,9 @@ export default function SkillsGrid() {
             >
               <div className="w-8 h-8 flex items-center justify-center">
                 {IconComponent ? (
-                  <IconComponent size={24} style={{ color: skill.color }} />
+                  <IconComponent size={24} style={{ color: skillColor }} />
                 ) : (
-                  <span className="text-xs font-bold" style={{ color: skill.color }}>
+                  <span className="text-xs font-bold" style={{ color: skillColor }}>
                     {skill.abbr || skill.name.slice(0, 3).toUpperCase()}
                   </span>
                 )}
