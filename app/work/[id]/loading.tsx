@@ -64,23 +64,6 @@ export default function Loading() {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .skeleton-shimmer {
-          background: linear-gradient(
-            90deg,
-            rgba(34, 211, 238, 0.04) 0%,
-            rgba(34, 211, 238, 0.08) 50%,
-            rgba(34, 211, 238, 0.04) 100%
-          );
-          background-size: 200% 100%;
-          animation: shimmer 1.6s ease-in-out infinite;
-        }
-        @keyframes shimmer {
-          0% { background-position: -200% 0; }
-          100% { background-position: 200% 0; }
-        }
-      `}</style>
     </div>
   );
 }

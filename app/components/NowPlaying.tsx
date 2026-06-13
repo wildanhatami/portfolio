@@ -8,31 +8,9 @@ import { NowPlayingData } from "@/app/lib/spotify";
 function MusicBars() {
   return (
     <div className="flex items-end gap-[2px] h-3">
-      {[1, 2, 3].map((i) => (
-        <div
-          key={i}
-          className="w-[3px] rounded-full"
-          style={{
-            background: "#1DB954",
-            animation: `musicBar${i} 0.8s ease-in-out infinite`,
-            animationDelay: `${(i - 1) * 0.15}s`,
-          }}
-        />
-      ))}
-      <style jsx>{`
-        @keyframes musicBar1 {
-          0%, 100% { height: 4px; }
-          50% { height: 12px; }
-        }
-        @keyframes musicBar2 {
-          0%, 100% { height: 8px; }
-          50% { height: 4px; }
-        }
-        @keyframes musicBar3 {
-          0%, 100% { height: 6px; }
-          50% { height: 12px; }
-        }
-      `}</style>
+      <div className="w-[3px] rounded-full music-bar-1" style={{ background: "#1DB954" }} />
+      <div className="w-[3px] rounded-full music-bar-2" style={{ background: "#1DB954" }} />
+      <div className="w-[3px] rounded-full music-bar-3" style={{ background: "#1DB954" }} />
     </div>
   );
 }
