@@ -13,11 +13,13 @@ function ProjectThumbnail({
   alt,
   shortName,
   objectFit = "cover",
+  priority = false,
 }: {
   src: string;
   alt: string;
   shortName: string;
   objectFit?: "cover" | "contain";
+  priority?: boolean;
 }) {
   const [imgError, setImgError] = useState(false);
 
@@ -44,6 +46,7 @@ function ProjectThumbnail({
       src={src}
       alt={alt}
       fill
+      priority={priority}
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       className={`${
         objectFit === "contain" ? "object-contain p-3" : "object-cover"
@@ -137,6 +140,7 @@ export default function FeaturedProjects() {
                   alt={project.name}
                   shortName={project.shortName || project.name}
                   objectFit={project.objectFit}
+                  priority={i < 3}
                 />
                 {/* Category badge */}
                 <div className="absolute top-2 left-2">
