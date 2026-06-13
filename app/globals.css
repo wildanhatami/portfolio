@@ -258,22 +258,3 @@ button {
   animation: shimmer 1.6s ease-in-out infinite;
 }
 
-/* ============================================================
-   SPOTIFY MUSIC BARS
-   ============================================================ */
-@keyframes musicBar1 {
-  0%, 100% { height: 4px; }
-  50% { height: 12px; }
-}
-@keyframes musicBar2 {
-  0%, 100% { height: 8px; }
-  50% { height: 4px; }
-}
-@keyframes musicBar3 {
-  0%, 100% { height: 6px; }
-  50% { height: 12px; }
-}
-
-.music-bar-1 { animation: musicBar1 0.8s ease-in-out infinite; }
-.music-bar-2 { animation: musicBar2 0.8s ease-in-out infinite 0.15s; }
-.music-bar-3 { animation: musicBar3 0.8s ease-in-out infinite 0.3s; }
