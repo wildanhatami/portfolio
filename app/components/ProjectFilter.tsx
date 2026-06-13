@@ -30,14 +30,14 @@ export default function ProjectFilter({ active, onChange }: ProjectFilterProps) 
             className="relative px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200"
             style={{
               background: isActive
-                ? "linear-gradient(135deg, rgba(34,211,238,0.2), rgba(168,85,247,0.2))"
-                : "rgba(255,255,255,0.04)",
+                ? "linear-gradient(135deg, var(--badge-bg), var(--badge-purple))"
+                : "var(--badge-subtle)",
               border: isActive
-                ? "1px solid rgba(34,211,238,0.4)"
-                : "1px solid rgba(255,255,255,0.08)",
-              color: isActive ? "#e2eaf4" : "#8ca0bc",
+                ? "1px solid var(--border-cyan)"
+                : "1px solid var(--border-subtle)",
+              color: isActive ? "var(--text-primary)" : "var(--text-secondary)",
               boxShadow: isActive
-                ? "0 0 12px rgba(34,211,238,0.1)"
+                ? "0 0 12px var(--cyan-glow)"
                 : "none",
             }}
           >
@@ -48,7 +48,7 @@ export default function ProjectFilter({ active, onChange }: ProjectFilterProps) 
                 className="absolute inset-0 rounded-full"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(34,211,238,0.05), rgba(168,85,247,0.05))",
+                    "linear-gradient(135deg, var(--badge-subtle), var(--badge-purple))",
                 }}
               />
             )}

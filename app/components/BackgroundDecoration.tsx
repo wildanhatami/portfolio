@@ -1,81 +1,91 @@
 "use client";
 
+import { useTheme } from "@/app/context/ThemeContext";
+
 export default function BackgroundDecoration() {
+  const { theme } = useTheme();
+  const isLight = theme === "light";
+
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-      {/* Dark base */}
-      <div className="absolute inset-0 bg-[#020817]" />
+      {/* Base background */}
+      <div
+        className="absolute inset-0 transition-colors duration-500"
+        style={{ background: "var(--bg-primary)" }}
+      />
 
       {/* Top-left cyan blob */}
       <div
-        className="animate-blob-drift absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full opacity-[0.12]"
+        className="animate-blob-drift absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full"
         style={{
-          background:
-            "radial-gradient(circle, rgba(34,211,238,0.8) 0%, rgba(34,211,238,0) 70%)",
+          background: "radial-gradient(circle, var(--cyan) 0%, transparent 70%)",
+          opacity: isLight ? 0.15 : 0.12,
           animationDelay: "0s",
         }}
       />
 
       {/* Top-right purple blob */}
       <div
-        className="animate-blob-drift absolute -top-20 right-0 w-[500px] h-[500px] rounded-full opacity-[0.10]"
+        className="animate-blob-drift absolute -top-20 right-0 w-[500px] h-[500px] rounded-full"
         style={{
-          background:
-            "radial-gradient(circle, rgba(168,85,247,0.9) 0%, rgba(168,85,247,0) 70%)",
+          background: "radial-gradient(circle, var(--purple) 0%, transparent 70%)",
+          opacity: isLight ? 0.12 : 0.10,
           animationDelay: "-4s",
         }}
       />
 
-      {/* Mid-left small cyan */}
+      {/* Mid-left cyan */}
       <div
-        className="animate-blob-drift absolute top-[45%] -left-20 w-[350px] h-[350px] rounded-full opacity-[0.08]"
+        className="animate-blob-drift absolute top-[45%] -left-20 w-[350px] h-[350px] rounded-full"
         style={{
-          background:
-            "radial-gradient(circle, rgba(34,211,238,0.7) 0%, rgba(34,211,238,0) 70%)",
+          background: "radial-gradient(circle, var(--cyan) 0%, transparent 70%)",
+          opacity: isLight ? 0.10 : 0.08,
           animationDelay: "-8s",
         }}
       />
 
       {/* Bottom-right purple blob */}
       <div
-        className="animate-blob-drift absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.10]"
+        className="animate-blob-drift absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full"
         style={{
-          background:
-            "radial-gradient(circle, rgba(168,85,247,0.8) 0%, rgba(168,85,247,0) 70%)",
+          background: "radial-gradient(circle, var(--purple) 0%, transparent 70%)",
+          opacity: isLight ? 0.12 : 0.10,
           animationDelay: "-2s",
         }}
       />
 
       {/* Bottom-center magenta accent */}
       <div
-        className="animate-blob-drift absolute bottom-[20%] left-[40%] w-[300px] h-[300px] rounded-full opacity-[0.05]"
+        className="animate-blob-drift absolute bottom-[20%] left-[40%] w-[300px] h-[300px] rounded-full"
         style={{
-          background:
-            "radial-gradient(circle, rgba(236,72,153,0.9) 0%, rgba(236,72,153,0) 70%)",
+          background: "radial-gradient(circle, var(--magenta) 0%, transparent 70%)",
+          opacity: isLight ? 0.08 : 0.05,
           animationDelay: "-6s",
         }}
       />
 
-      {/* Grid dot pattern */}
+      {/* Grid dot pattern — same pattern both modes, just different intensity */}
       <div
-        className="absolute inset-0 opacity-[0.025]"
+        className="absolute inset-0"
         style={{
-          backgroundImage:
-            "radial-gradient(rgba(34,211,238,0.6) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(var(--grid-color) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
+          opacity: isLight ? 0.5 : 0.4,
         }}
       />
 
-      {/* Subtle scan lines / noise texture */}
-      <div
-        className="absolute inset-0 opacity-[0.015]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(34,211,238,0.05) 2px, rgba(34,211,238,0.05) 4px)",
-        }}
-      />
+      {/* Scan lines (dark mode only) */}
+      {!isLight && (
+        <div
+          className="absolute inset-0 opacity-[0.015]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(34,211,238,0.05) 2px, rgba(34,211,238,0.05) 4px)",
+          }}
+        />
+      )}
 
-      {/* Particles (static positioned dots) */}
+      {/* Floating particles */}
       {[
         { top: "15%", left: "8%", size: 2, delay: 0 },
         { top: "35%", left: "92%", size: 1.5, delay: 1 },
@@ -96,15 +106,13 @@ export default function BackgroundDecoration() {
             left: p.left,
             width: `${p.size * 2}px`,
             height: `${p.size * 2}px`,
-            background:
-              i % 2 === 0
-                ? "rgba(34,211,238,0.7)"
-                : "rgba(168,85,247,0.7)",
+            background: i % 2 === 0 ? "var(--cyan)" : "var(--purple)",
+            opacity: isLight ? 0.6 : 0.7,
             animationDelay: `${p.delay}s`,
             boxShadow:
               i % 2 === 0
-                ? "0 0 6px rgba(34,211,238,0.8)"
-                : "0 0 6px rgba(168,85,247,0.8)",
+                ? "0 0 8px var(--cyan-glow)"
+                : "0 0 8px var(--purple-glow)",
           }}
         />
       ))}

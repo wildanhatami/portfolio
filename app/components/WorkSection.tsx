@@ -39,21 +39,21 @@ export default function WorkSection() {
                     background: "linear-gradient(180deg, #22d3ee, #a855f7)",
                   }}
                 />
-                <span className="text-xs font-semibold tracking-widest text-[#22d3ee] uppercase">
+                <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "var(--cyan)" }}>
                   Portfolio
                 </span>
               </div>
 
               <h2
-                className="text-3xl xl:text-4xl font-bold text-white mb-4 leading-tight tracking-tight"
-                style={{ fontFamily: "var(--font-jakarta)" }}
+                className="text-3xl xl:text-4xl font-bold mb-4 leading-tight tracking-tight"
+                style={{ fontFamily: "var(--font-jakarta)", color: "var(--text-primary)" }}
               >
                 MY
                 <br />
                 <span className="gradient-text">WORK</span>
               </h2>
 
-              <p className="text-[#8ca0bc] text-sm leading-relaxed mb-6">
+              <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--text-secondary)" }}>
                 {profile.workDescription}
               </p>
 
@@ -61,7 +61,7 @@ export default function WorkSection() {
               <ProjectFilter active={activeFilter} onChange={setActiveFilter} />
 
               {/* Count */}
-              <p className="text-xs text-[#4a5c74] mt-4">
+              <p className="text-xs mt-4" style={{ color: "var(--text-muted)" }}>
                 {filtered.length} project
                 {filtered.length !== 1 ? "s" : ""}
               </p>
@@ -87,7 +87,7 @@ export default function WorkSection() {
 
             {filtered.length === 0 && (
               <div className="flex items-center justify-center h-48 glass-card rounded-2xl">
-                <p className="text-[#4a5c74] text-sm">
+                <p className="text-sm" style={{ color: "var(--text-muted)" }}>
                   No projects found in this category.
                 </p>
               </div>

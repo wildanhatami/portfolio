@@ -54,7 +54,6 @@ export default function ContactForm() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear field error on change
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -104,7 +103,6 @@ export default function ContactForm() {
         setTimeout(() => setStatus("idle"), 5000);
       }
     } else {
-      // Fallback: open mailto
       try {
         const subject = encodeURIComponent(
           `Portfolio Contact from ${formData.name}`
@@ -127,13 +125,6 @@ export default function ContactForm() {
     }
   };
 
-  const inputBase =
-    "w-full px-4 py-3 rounded-xl text-sm text-[#e2eaf4] placeholder-[#4a5c74] outline-none transition-all duration-200";
-  const inputStyle = {
-    background: "rgba(255,255,255,0.04)",
-    border: "1px solid rgba(255,255,255,0.08)",
-  };
-
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-4">
       {/* Name */}
@@ -145,26 +136,21 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           placeholder="Your Name"
-          className={`${inputBase} ${
-            errors.name ? "border-red-500/50" : ""
-          }`}
+          className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200"
           style={{
-            ...inputStyle,
-            borderColor: errors.name
-              ? "rgba(239,68,68,0.5)"
-              : inputStyle.border.replace("1px solid ", ""),
+            color: "var(--text-primary)",
+            background: "var(--input-bg)",
+            border: `1px solid ${errors.name ? "rgba(239,68,68,0.5)" : "var(--border-subtle)"}`,
           }}
           onFocus={(e) => {
             if (!errors.name)
-              (e.target as HTMLInputElement).style.borderColor =
-                "rgba(34,211,238,0.4)";
+              (e.target as HTMLInputElement).style.borderColor = "var(--border-cyan)";
             (e.target as HTMLInputElement).style.boxShadow =
-              "0 0 0 3px rgba(34,211,238,0.05)";
+              "0 0 0 3px var(--cyan-faint)";
           }}
           onBlur={(e) => {
             if (!errors.name)
-              (e.target as HTMLInputElement).style.borderColor =
-                "rgba(255,255,255,0.08)";
+              (e.target as HTMLInputElement).style.borderColor = "var(--border-subtle)";
             (e.target as HTMLInputElement).style.boxShadow = "none";
           }}
         />
@@ -185,24 +171,21 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           placeholder="Your Email"
-          className={inputBase}
+          className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200"
           style={{
-            ...inputStyle,
-            borderColor: errors.email
-              ? "rgba(239,68,68,0.5)"
-              : "rgba(255,255,255,0.08)",
+            color: "var(--text-primary)",
+            background: "var(--input-bg)",
+            border: `1px solid ${errors.email ? "rgba(239,68,68,0.5)" : "var(--border-subtle)"}`,
           }}
           onFocus={(e) => {
             if (!errors.email)
-              (e.target as HTMLInputElement).style.borderColor =
-                "rgba(34,211,238,0.4)";
+              (e.target as HTMLInputElement).style.borderColor = "var(--border-cyan)";
             (e.target as HTMLInputElement).style.boxShadow =
-              "0 0 0 3px rgba(34,211,238,0.05)";
+              "0 0 0 3px var(--cyan-faint)";
           }}
           onBlur={(e) => {
             if (!errors.email)
-              (e.target as HTMLInputElement).style.borderColor =
-                "rgba(255,255,255,0.08)";
+              (e.target as HTMLInputElement).style.borderColor = "var(--border-subtle)";
             (e.target as HTMLInputElement).style.boxShadow = "none";
           }}
         />
@@ -223,24 +206,21 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder="Your Message"
           rows={4}
-          className={`${inputBase} resize-none`}
+          className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 resize-none"
           style={{
-            ...inputStyle,
-            borderColor: errors.message
-              ? "rgba(239,68,68,0.5)"
-              : "rgba(255,255,255,0.08)",
+            color: "var(--text-primary)",
+            background: "var(--input-bg)",
+            border: `1px solid ${errors.message ? "rgba(239,68,68,0.5)" : "var(--border-subtle)"}`,
           }}
           onFocus={(e) => {
             if (!errors.message)
-              (e.target as HTMLTextAreaElement).style.borderColor =
-                "rgba(34,211,238,0.4)";
+              (e.target as HTMLTextAreaElement).style.borderColor = "var(--border-cyan)";
             (e.target as HTMLTextAreaElement).style.boxShadow =
-              "0 0 0 3px rgba(34,211,238,0.05)";
+              "0 0 0 3px var(--cyan-faint)";
           }}
           onBlur={(e) => {
             if (!errors.message)
-              (e.target as HTMLTextAreaElement).style.borderColor =
-                "rgba(255,255,255,0.08)";
+              (e.target as HTMLTextAreaElement).style.borderColor = "var(--border-subtle)";
             (e.target as HTMLTextAreaElement).style.boxShadow = "none";
           }}
         />

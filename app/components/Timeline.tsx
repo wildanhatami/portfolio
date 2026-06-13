@@ -24,8 +24,8 @@ export default function Timeline() {
   return (
     <div className="mt-10">
       <h3
-        className="text-sm font-bold text-white tracking-widest uppercase mb-8"
-        style={{ fontFamily: "var(--font-jakarta)" }}
+        className="text-sm font-bold tracking-widest uppercase mb-8"
+        style={{ fontFamily: "var(--font-jakarta)", color: "var(--text-primary)" }}
       >
         Timeline
       </h3>
@@ -68,15 +68,15 @@ export default function Timeline() {
 
                 {/* Year */}
                 <span
-                  className="text-xs font-bold text-[#22d3ee] tracking-wider mb-1"
-                  style={{ fontFamily: "var(--font-jakarta)" }}
+                  className="text-xs font-bold tracking-wider mb-1"
+                  style={{ color: "var(--cyan)", fontFamily: "var(--font-jakarta)" }}
                 >
                   {entry.year}
                 </span>
-                <h4 className="text-sm font-semibold text-white mb-1 leading-tight">
+                <h4 className="text-sm font-semibold mb-1 leading-tight" style={{ color: "var(--text-primary)" }}>
                   {entry.title}
                 </h4>
-                <p className="text-xs text-[#8ca0bc] leading-relaxed">
+                <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                   {entry.description}
                 </p>
               </motion.div>
@@ -126,13 +126,13 @@ export default function Timeline() {
 
               {/* Content */}
               <div className={`pb-6 ${isLast ? "pb-0" : ""}`}>
-                <span className="text-xs font-bold text-[#22d3ee] tracking-wider">
+                <span className="text-xs font-bold tracking-wider" style={{ color: "var(--cyan)" }}>
                   {entry.year}
                 </span>
-                <h4 className="text-sm font-semibold text-white mt-0.5 mb-1">
+                <h4 className="text-sm font-semibold mt-0.5 mb-1" style={{ color: "var(--text-primary)" }}>
                   {entry.title}
                 </h4>
-                <p className="text-xs text-[#8ca0bc] leading-relaxed">
+                <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                   {entry.description}
                 </p>
               </div>

@@ -80,15 +80,16 @@ export default function FeaturedProjects() {
               }}
             />
             <h2
-              className="text-lg font-bold text-white tracking-widest uppercase"
-              style={{ fontFamily: "var(--font-jakarta)" }}
+              className="text-lg font-bold tracking-widest uppercase"
+              style={{ fontFamily: "var(--font-jakarta)", color: "var(--text-primary)" }}
             >
               My Projects
             </h2>
           </div>
           <button
             onClick={handleScrollToWork}
-            className="text-xs text-[#22d3ee] hover:text-white transition-colors flex items-center gap-1.5 group"
+            className="text-xs transition-colors flex items-center gap-1.5 group"
+            style={{ color: "var(--cyan)" }}
           >
             View all
             <ExternalLink
@@ -113,14 +114,12 @@ export default function FeaturedProjects() {
               } as React.CSSProperties}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  "0 0 24px rgba(34,211,238,0.15), 0 8px 24px rgba(0,0,0,0.4)";
-                (e.currentTarget as HTMLDivElement).style.borderColor =
-                  "rgba(34,211,238,0.3)";
+                  "0 0 24px var(--cyan-glow), 0 8px 24px rgba(0,0,0,0.3)";
+                (e.currentTarget as HTMLDivElement).style.borderColor = "var(--border-cyan)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-                (e.currentTarget as HTMLDivElement).style.borderColor =
-                  "rgba(34,211,238,0.12)";
+                (e.currentTarget as HTMLDivElement).style.borderColor = "var(--border-subtle)";
               }}
             >
               {/* Thumbnail */}
@@ -129,8 +128,8 @@ export default function FeaturedProjects() {
                 style={{
                   background:
                     project.objectFit === "contain"
-                      ? "rgba(8, 20, 45, 0.4)"
-                      : undefined,
+                      ? "var(--bg-card)"
+                      : "var(--bg-secondary)",
                   backdropFilter: project.objectFit === "contain" ? "blur(12px)" : undefined,
                   WebkitBackdropFilter: project.objectFit === "contain" ? "blur(12px)" : undefined,
                 }}
@@ -147,9 +146,9 @@ export default function FeaturedProjects() {
                   <span
                     className="px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wider uppercase"
                     style={{
-                      background: "rgba(34,211,238,0.15)",
-                      border: "1px solid rgba(34,211,238,0.3)",
-                      color: "#22d3ee",
+                      background: "var(--badge-bg)",
+                      border: "1px solid var(--border-cyan)",
+                      color: "var(--cyan)",
                     }}
                   >
                     {project.category}
@@ -159,10 +158,10 @@ export default function FeaturedProjects() {
 
               {/* Info */}
               <div className="p-4">
-                <h3 className="text-sm font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors line-clamp-1">
+                <h3 className="text-sm font-bold mb-1 transition-colors line-clamp-1" style={{ color: "var(--text-primary)" }}>
                   {project.name}
                 </h3>
-                <p className="text-xs text-[#8ca0bc] line-clamp-2 leading-relaxed">
+                <p className="text-xs line-clamp-2 leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                   {project.description}
                 </p>
 
@@ -173,9 +172,9 @@ export default function FeaturedProjects() {
                     onClick={(e) => e.stopPropagation()}
                     className="flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-medium transition-all duration-200"
                     style={{
-                      background: "rgba(168,85,247,0.08)",
-                      border: "1px solid rgba(168,85,247,0.2)",
-                      color: "#a855f7",
+                      background: "var(--badge-purple)",
+                      border: "1px solid var(--border-purple)",
+                      color: "var(--purple)",
                     }}
                     aria-label={`View detail for ${project.name}`}
                   >
@@ -188,7 +187,8 @@ export default function FeaturedProjects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="text-[#8ca0bc] hover:text-white transition-colors"
+                      className="transition-colors"
+                      style={{ color: "var(--text-secondary)" }}
                       aria-label={`GitHub — ${project.name}`}
                     >
                       <FaGithub size={14} />
@@ -200,7 +200,8 @@ export default function FeaturedProjects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="text-[#8ca0bc] hover:text-cyan-400 transition-colors"
+                      className="transition-colors"
+                      style={{ color: "var(--text-secondary)" }}
                       aria-label={`Live demo — ${project.name}`}
                     >
                       <ExternalLink size={14} />

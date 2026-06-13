@@ -13,8 +13,8 @@ function MapDecoration() {
       className="relative rounded-xl overflow-hidden flex-1 min-h-[120px]"
       style={{
         background:
-          "linear-gradient(135deg, rgba(34,211,238,0.04), rgba(168,85,247,0.04))",
-        border: "1px solid rgba(34,211,238,0.08)",
+          "linear-gradient(135deg, var(--badge-subtle), var(--badge-purple))",
+        border: "1px solid var(--border-subtle)",
       }}
     >
       {/* Grid lines */}
@@ -22,8 +22,8 @@ function MapDecoration() {
         className="absolute inset-0"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(34,211,238,0.07) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(34,211,238,0.07) 1px, transparent 1px)
+            linear-gradient(var(--grid-color) 1px, transparent 1px),
+            linear-gradient(90deg, var(--grid-color) 1px, transparent 1px)
           `,
           backgroundSize: "28px 28px",
         }}
@@ -47,10 +47,11 @@ function MapDecoration() {
       {/* Location label */}
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2">
         <div
-          className="px-3 py-1 rounded-full text-[10px] font-medium text-[#22d3ee] whitespace-nowrap"
+          className="px-3 py-1 rounded-full text-[10px] font-medium whitespace-nowrap"
           style={{
-            background: "rgba(34,211,238,0.08)",
-            border: "1px solid rgba(34,211,238,0.2)",
+            color: "var(--cyan)",
+            background: "var(--badge-bg)",
+            border: "1px solid var(--border-cyan)",
           }}
         >
           📍 {profile.location}
@@ -81,20 +82,20 @@ export default function ContactSection() {
                   background: "linear-gradient(180deg, #22d3ee, #a855f7)",
                 }}
               />
-              <span className="text-xs font-semibold tracking-widest text-[#22d3ee] uppercase">
+              <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "var(--cyan)" }}>
                 Contact
               </span>
             </div>
 
             <h2
-              className="text-3xl xl:text-4xl font-bold text-white mb-4 leading-tight tracking-tight"
-              style={{ fontFamily: "var(--font-jakarta)" }}
+              className="text-3xl xl:text-4xl font-bold mb-4 leading-tight tracking-tight"
+              style={{ fontFamily: "var(--font-jakarta)", color: "var(--text-primary)" }}
             >
               LET&apos;S{" "}
               <span className="gradient-text">CONNECT</span>
             </h2>
 
-            <p className="text-[#8ca0bc] text-sm leading-relaxed mb-8">
+            <p className="text-sm leading-relaxed mb-8" style={{ color: "var(--text-secondary)" }}>
               {profile.contactDescription}
             </p>
 
@@ -104,19 +105,20 @@ export default function ContactSection() {
                 <div
                   className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
                   style={{
-                    background: "rgba(34,211,238,0.08)",
-                    border: "1px solid rgba(34,211,238,0.15)",
+                    background: "var(--badge-subtle)",
+                    border: "1px solid var(--border-subtle)",
                   }}
                 >
                   <Mail size={15} className="text-cyan-400" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-[#4a5c74] uppercase tracking-wider mb-0.5">
+                  <p className="text-[10px] uppercase tracking-wider mb-0.5" style={{ color: "var(--text-muted)" }}>
                     Email
                   </p>
                   <a
                     href={`mailto:${profile.email}`}
-                    className="text-sm text-[#e2eaf4] hover:text-cyan-400 transition-colors"
+                    className="text-sm transition-colors"
+                    style={{ color: "var(--text-primary)" }}
                   >
                     {profile.email}
                   </a>
@@ -134,14 +136,15 @@ export default function ContactSection() {
                   <MessageCircle size={15} className="text-green-400" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-[#4a5c74] uppercase tracking-wider mb-0.5">
+                  <p className="text-[10px] uppercase tracking-wider mb-0.5" style={{ color: "var(--text-muted)" }}>
                     WhatsApp
                   </p>
                   <a
                     href={profile.social.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-[#e2eaf4] hover:text-green-400 transition-colors"
+                    className="text-sm transition-colors"
+                    style={{ color: "var(--text-primary)" }}
                   >
                     {profile.phone}
                   </a>
@@ -159,17 +162,17 @@ export default function ContactSection() {
                   <MapPin size={15} className="text-purple-400" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-[#4a5c74] uppercase tracking-wider mb-0.5">
+                  <p className="text-[10px] uppercase tracking-wider mb-0.5" style={{ color: "var(--text-muted)" }}>
                     Location
                   </p>
-                  <p className="text-sm text-[#e2eaf4]">{profile.location}</p>
+                  <p className="text-sm" style={{ color: "var(--text-primary)" }}>{profile.location}</p>
                 </div>
               </div>
             </div>
 
             {/* Social links */}
             <div>
-              <p className="text-[10px] text-[#4a5c74] uppercase tracking-wider mb-3">
+              <p className="text-[10px] uppercase tracking-wider mb-3" style={{ color: "var(--text-muted)" }}>
                 Social Media
               </p>
               <SocialLinks size="md" variant="pill" />
@@ -187,15 +190,15 @@ export default function ContactSection() {
             <div
               className="rounded-2xl p-6 md:p-8"
               style={{
-                background: "rgba(5,15,35,0.65)",
+                background: "var(--bg-panel)",
                 backdropFilter: "blur(20px)",
-                border: "1px solid rgba(34,211,238,0.12)",
-                boxShadow: "0 4px 60px rgba(0,0,0,0.4)",
+                border: "1px solid var(--border-subtle)",
+                boxShadow: "0 4px 60px rgba(0,0,0,0.3)",
               }}
             >
               <h3
-                className="text-lg font-bold text-white mb-6 tracking-wide"
-                style={{ fontFamily: "var(--font-jakarta)" }}
+                className="text-lg font-bold mb-6 tracking-wide"
+                style={{ fontFamily: "var(--font-jakarta)", color: "var(--text-primary)" }}
               >
                 GET IN TOUCH
               </h3>

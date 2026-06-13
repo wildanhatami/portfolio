@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import PageTransition from "@/app/components/PageTransition";
+import { ThemeProvider } from "@/app/context/ThemeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -69,11 +70,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${inter.variable} ${plusJakartaSans.variable}`}>
+    <html lang="id" suppressHydrationWarning className={`${inter.variable} ${plusJakartaSans.variable}`}>
+      <head>
+        {/* Anti-flash: set theme before first paint */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var t=localStorage.getItem('portfolio-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();`,
+          }}
+        />
+      </head>
       <body className="antialiased">
-        <PageTransition>{children}</PageTransition>
+        <ThemeProvider>
+          <PageTransition>{children}</PageTransition>
+        </ThemeProvider>
       </body>
     </html>
   );
 }
-

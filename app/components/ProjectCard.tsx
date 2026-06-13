@@ -39,7 +39,7 @@ function ThumbnailFallback({ name }: { name: string }) {
       className="w-full h-full flex flex-col items-center justify-center"
       style={{
         background:
-          "linear-gradient(135deg, rgba(8,20,45,1), rgba(34,211,238,0.06), rgba(168,85,247,0.06))",
+          "linear-gradient(135deg, var(--bg-card), var(--badge-subtle), var(--badge-purple))",
       }}
     >
       <div
@@ -48,7 +48,7 @@ function ThumbnailFallback({ name }: { name: string }) {
       >
         {abbr}
       </div>
-      <div className="text-[9px] text-[#4a5c74] tracking-widest text-center px-4">
+      <div className="text-[9px] tracking-widest text-center px-4" style={{ color: "var(--text-muted)" }}>
         {name}
       </div>
     </div>
@@ -72,14 +72,12 @@ export default function ProjectCard({ project }: { project: Project }) {
       className="group glass-card overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1"
       onMouseEnter={(e) => {
         (e.currentTarget as HTMLDivElement).style.boxShadow =
-          "0 0 24px rgba(34,211,238,0.15), 0 8px 32px rgba(0,0,0,0.5)";
-        (e.currentTarget as HTMLDivElement).style.borderColor =
-          "rgba(34,211,238,0.3)";
+          "0 0 24px var(--cyan-glow), 0 8px 32px rgba(0,0,0,0.4)";
+        (e.currentTarget as HTMLDivElement).style.borderColor = "var(--border-cyan)";
       }}
       onMouseLeave={(e) => {
         (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-        (e.currentTarget as HTMLDivElement).style.borderColor =
-          "rgba(34,211,238,0.12)";
+        (e.currentTarget as HTMLDivElement).style.borderColor = "var(--border-subtle)";
       }}
     >
       {/* Thumbnail */}
@@ -88,8 +86,8 @@ export default function ProjectCard({ project }: { project: Project }) {
         style={{
           background:
             project.objectFit === "contain"
-              ? "rgba(8, 20, 45, 0.4)"
-              : "#050f1e",
+              ? "var(--bg-card)"
+              : "var(--bg-secondary)",
           backdropFilter: project.objectFit === "contain" ? "blur(12px)" : undefined,
           WebkitBackdropFilter: project.objectFit === "contain" ? "blur(12px)" : undefined,
         }}
@@ -147,12 +145,12 @@ export default function ProjectCard({ project }: { project: Project }) {
       {/* Content */}
       <div className="p-5 flex flex-col flex-1">
         <h3
-          className="font-bold text-white text-sm mb-2 group-hover:text-cyan-400 transition-colors leading-snug"
-          style={{ fontFamily: "var(--font-jakarta)" }}
+          className="font-bold text-sm mb-2 transition-colors leading-snug"
+          style={{ fontFamily: "var(--font-jakarta)", color: "var(--text-primary)" }}
         >
           {project.name}
         </h3>
-        <p className="text-[#8ca0bc] text-xs leading-relaxed mb-4 flex-1">
+        <p className="text-xs leading-relaxed mb-4 flex-1" style={{ color: "var(--text-secondary)" }}>
           {project.description}
         </p>
 
@@ -162,17 +160,18 @@ export default function ProjectCard({ project }: { project: Project }) {
             {project.tech.slice(0, 4).map((t) => (
               <span
                 key={t}
-                className="px-2 py-0.5 rounded-md text-[10px] font-medium text-[#8ca0bc]"
+                className="px-2 py-0.5 rounded-md text-[10px] font-medium"
                 style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.06)",
+                  color: "var(--text-secondary)",
+                  background: "var(--badge-subtle)",
+                  border: "1px solid var(--border-subtle)",
                 }}
               >
                 {t}
               </span>
             ))}
             {project.tech.length > 4 && (
-              <span className="text-[10px] text-[#4a5c74] flex items-center">
+              <span className="text-[10px] flex items-center" style={{ color: "var(--text-muted)" }}>
                 +{project.tech.length - 4}
               </span>
             )}
@@ -186,17 +185,17 @@ export default function ProjectCard({ project }: { project: Project }) {
             href={`/work/${project.id}`}
             className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all duration-200"
             style={{
-              background: "rgba(168,85,247,0.08)",
-              border: "1px solid rgba(168,85,247,0.2)",
-              color: "#a855f7",
+              background: "var(--badge-purple)",
+              border: "1px solid var(--border-purple)",
+              color: "var(--purple)",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(168,85,247,0.15)";
-              (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
+              (e.currentTarget as HTMLAnchorElement).style.background = "var(--badge-bg)";
+              (e.currentTarget as HTMLAnchorElement).style.color = "var(--text-primary)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(168,85,247,0.08)";
-              (e.currentTarget as HTMLAnchorElement).style.color = "#a855f7";
+              (e.currentTarget as HTMLAnchorElement).style.background = "var(--badge-purple)";
+              (e.currentTarget as HTMLAnchorElement).style.color = "var(--purple)";
             }}
             aria-label={`View detail for ${project.name}`}
           >
@@ -208,8 +207,16 @@ export default function ProjectCard({ project }: { project: Project }) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-[#8ca0bc] hover:text-white transition-all duration-200 hover:bg-[rgba(255,255,255,0.06)]"
-              style={{ border: "1px solid rgba(255,255,255,0.06)" }}
+              className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all duration-200"
+              style={{ border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.background = "var(--badge-subtle)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "var(--text-primary)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+                (e.currentTarget as HTMLAnchorElement).style.color = "var(--text-secondary)";
+              }}
               aria-label={`View GitHub repository for ${project.name}`}
             >
               <FaGithub size={13} />
@@ -221,10 +228,11 @@ export default function ProjectCard({ project }: { project: Project }) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-[#22d3ee] hover:text-white transition-all duration-200"
+              className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all duration-200"
               style={{
-                background: "rgba(34,211,238,0.08)",
-                border: "1px solid rgba(34,211,238,0.2)",
+                color: "var(--cyan)",
+                background: "var(--badge-subtle)",
+                border: "1px solid var(--border-subtle)",
               }}
               aria-label={`View live demo for ${project.name}`}
             >

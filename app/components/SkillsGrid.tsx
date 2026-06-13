@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { skills } from "@/app/data/skills";
 
-// Dynamically import react-icons
 import {
   SiHtml5,
   SiCss,
@@ -36,8 +35,8 @@ export default function SkillsGrid() {
   return (
     <div>
       <h3
-        className="text-sm font-bold text-white tracking-widest uppercase mb-4"
-        style={{ fontFamily: "var(--font-jakarta)" }}
+        className="text-sm font-bold tracking-widest uppercase mb-4"
+        style={{ fontFamily: "var(--font-jakarta)", color: "var(--text-primary)" }}
       >
         Skills
       </h3>
@@ -58,38 +57,35 @@ export default function SkillsGrid() {
               whileHover={{ y: -4 }}
               className="flex flex-col items-center gap-1.5 p-3 rounded-xl cursor-default transition-all duration-200"
               style={{
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.06)",
+                background: "var(--badge-subtle)",
+                border: "1px solid var(--border-subtle)",
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
-                el.style.borderColor = `${skill.color}40`;
-                el.style.boxShadow = `0 0 12px ${skill.color}20`;
-                el.style.background = `${skill.color}08`;
+                el.style.borderColor = `${skill.color}60`;
+                el.style.boxShadow = `0 0 12px ${skill.color}25`;
+                el.style.background = `${skill.color}10`;
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
-                el.style.borderColor = "rgba(255,255,255,0.06)";
+                el.style.borderColor = "var(--border-subtle)";
                 el.style.boxShadow = "none";
-                el.style.background = "rgba(255,255,255,0.03)";
+                el.style.background = "var(--badge-subtle)";
               }}
             >
               <div className="w-8 h-8 flex items-center justify-center">
                 {IconComponent ? (
-                  <IconComponent
-                    size={24}
-                    style={{ color: skill.color }}
-                  />
+                  <IconComponent size={24} style={{ color: skill.color }} />
                 ) : (
-                  <span
-                    className="text-xs font-bold"
-                    style={{ color: skill.color }}
-                  >
+                  <span className="text-xs font-bold" style={{ color: skill.color }}>
                     {skill.abbr || skill.name.slice(0, 3).toUpperCase()}
                   </span>
                 )}
               </div>
-              <span className="text-[10px] text-[#8ca0bc] text-center leading-tight font-medium">
+              <span
+                className="text-[10px] text-center leading-tight font-medium"
+                style={{ color: "var(--text-secondary)" }}
+              >
                 {skill.name}
               </span>
             </motion.div>

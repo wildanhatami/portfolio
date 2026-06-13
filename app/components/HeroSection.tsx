@@ -33,7 +33,7 @@ function ProfileImage() {
       <div
         className="absolute inset-[3px] rounded-full"
         style={{
-          background: "rgba(5,15,35,0.8)",
+          background: "var(--bg-panel)",
           backdropFilter: "blur(8px)",
         }}
       />
@@ -89,7 +89,7 @@ function ProfileImage() {
                 >
                   WH
                 </div>
-                <div className="text-xs text-[#8ca0bc] mt-1 tracking-widest">
+                <div className="text-xs mt-1 tracking-widest" style={{ color: "var(--text-secondary)" }}>
                   PHOTO
                 </div>
               </div>
@@ -102,24 +102,24 @@ function ProfileImage() {
       <div
         className="absolute top-4 right-2 w-3 h-3 rounded-full animate-glow-pulse"
         style={{
-          background: "#22d3ee",
-          boxShadow: "0 0 8px #22d3ee",
+          background: "var(--cyan)",
+          boxShadow: "0 0 8px var(--cyan-glow)",
           animationDelay: "0.5s",
         }}
       />
       <div
         className="absolute bottom-6 left-2 w-2 h-2 rounded-full animate-glow-pulse"
         style={{
-          background: "#a855f7",
-          boxShadow: "0 0 8px #a855f7",
+          background: "var(--purple)",
+          boxShadow: "0 0 8px var(--purple-glow)",
           animationDelay: "1.5s",
         }}
       />
       <div
         className="absolute top-1/2 -right-3 w-1.5 h-1.5 rounded-full animate-glow-pulse"
         style={{
-          background: "#22d3ee",
-          boxShadow: "0 0 6px #22d3ee",
+          background: "var(--cyan)",
+          boxShadow: "0 0 6px var(--cyan-glow)",
           animationDelay: "1s",
         }}
       />
@@ -149,13 +149,13 @@ export default function HeroSection() {
               variants={fadeUpVariant}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 glass"
-              style={{ border: "1px solid rgba(34,211,238,0.2)" }}
+              style={{ border: "1px solid var(--border-subtle)" }}
             >
               <span
                 className="w-1.5 h-1.5 rounded-full animate-glow-pulse"
-                style={{ background: "#22d3ee", boxShadow: "0 0 6px #22d3ee" }}
+                style={{ background: "var(--cyan)", boxShadow: "0 0 6px var(--cyan-glow)" }}
               />
-              <span className="text-[#8ca0bc]">
+              <span style={{ color: "var(--text-secondary)" }}>
                 {profile.location} · Available for opportunities
               </span>
             </motion.div>
@@ -179,9 +179,8 @@ export default function HeroSection() {
                       return (
                         <span
                           key={wi}
-                          className={
-                            isHighlighted ? "gradient-text" : "text-white"
-                          }
+                          className={isHighlighted ? "gradient-text" : ""}
+                          style={isHighlighted ? {} : { color: "var(--text-primary)" }}
                         >
                           {word}
                           {wi < words.length - 1 ? " " : ""}
@@ -199,7 +198,8 @@ export default function HeroSection() {
               animate="visible"
               variants={fadeUpVariant}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-              className="text-[#8ca0bc] text-base lg:text-lg leading-relaxed max-w-xl mb-8 mx-auto lg:mx-0"
+              className="text-base lg:text-lg leading-relaxed max-w-xl mb-8 mx-auto lg:mx-0"
+              style={{ color: "var(--text-secondary)" }}
             >
               {profile.heroDescription}
             </motion.p>
@@ -242,23 +242,19 @@ export default function HeroSection() {
               {/* Secondary button */}
               <button
                 onClick={() => handleScrollTo("contact")}
-                className="group px-7 py-3 rounded-xl font-semibold text-sm text-[#e2eaf4] transition-all duration-300 hover:scale-[1.02] hover:text-white"
+                className="group px-7 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-[1.02]"
                 style={{
-                  background: "rgba(34,211,238,0.05)",
-                  border: "1px solid rgba(34,211,238,0.25)",
-                  boxShadow: "0 0 0 0 rgba(34,211,238,0)",
+                  color: "var(--text-primary)",
+                  background: "var(--badge-subtle)",
+                  border: "1px solid var(--border-subtle)",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLButtonElement).style.boxShadow =
-                    "0 0 16px rgba(34,211,238,0.15)";
-                  (e.currentTarget as HTMLButtonElement).style.borderColor =
-                    "rgba(34,211,238,0.5)";
+                  (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--border-cyan)";
+                  (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 0 16px var(--cyan-glow)";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLButtonElement).style.boxShadow =
-                    "0 0 0 0 rgba(34,211,238,0)";
-                  (e.currentTarget as HTMLButtonElement).style.borderColor =
-                    "rgba(34,211,238,0.25)";
+                  (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--border-subtle)";
+                  (e.currentTarget as HTMLButtonElement).style.boxShadow = "none";
                 }}
               >
                 <span className="flex items-center gap-2">
@@ -271,26 +267,22 @@ export default function HeroSection() {
               <a
                 href="/cv-muhammad-wildan-hatami.pdf"
                 download
-                className="group px-7 py-3 rounded-xl font-semibold text-sm text-[#e2eaf4] transition-all duration-300 hover:scale-[1.02] hover:text-white flex items-center justify-center gap-2"
+                className="group px-7 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2"
                 style={{
-                  background: "rgba(168,85,247,0.05)",
-                  border: "1px solid rgba(168,85,247,0.25)",
-                  boxShadow: "0 0 0 0 rgba(168,85,247,0)",
+                  color: "var(--text-primary)",
+                  background: "var(--badge-purple)",
+                  border: "1px solid var(--border-purple)",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                    "0 0 16px rgba(168,85,247,0.15)";
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor =
-                    "rgba(168,85,247,0.5)";
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--purple)";
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 16px var(--purple-glow)";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                    "0 0 0 0 rgba(168,85,247,0)";
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor =
-                    "rgba(168,85,247,0.25)";
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--border-purple)";
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = "none";
                 }}
               >
-                <FileText size={16} className="text-[#a855f7]" />
+                <FileText size={16} style={{ color: "var(--purple)" }} />
                 <span>Download CV</span>
               </a>
             </motion.div>

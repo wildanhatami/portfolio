@@ -23,7 +23,7 @@ export default function AboutSection() {
               background: "linear-gradient(180deg, #22d3ee, #a855f7)",
             }}
           />
-          <span className="text-xs font-semibold tracking-widest text-[#22d3ee] uppercase">
+          <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "var(--cyan)" }}>
             About
           </span>
         </motion.div>
@@ -36,10 +36,10 @@ export default function AboutSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="rounded-2xl p-6 md:p-10"
           style={{
-            background: "rgba(5,15,35,0.65)",
+            background: "var(--bg-panel)",
             backdropFilter: "blur(20px)",
-            border: "1px solid rgba(34,211,238,0.12)",
-            boxShadow: "0 4px 60px rgba(0,0,0,0.4)",
+            border: "1px solid var(--border-subtle)",
+            boxShadow: "0 4px 60px rgba(0,0,0,0.3)",
           }}
         >
           {/* Top: About text + Skills */}
@@ -47,18 +47,18 @@ export default function AboutSection() {
             {/* Left: About text */}
             <div className="flex-1">
               <h2
-                className="text-2xl md:text-3xl font-bold text-white mb-6 tracking-tight"
-                style={{ fontFamily: "var(--font-jakarta)" }}
+                className="text-2xl md:text-3xl font-bold mb-6 tracking-tight"
+                style={{ fontFamily: "var(--font-jakarta)", color: "var(--text-primary)" }}
               >
                 ABOUT{" "}
                 <span className="gradient-text">ME</span>
               </h2>
 
               <div className="space-y-4">
-                <p className="text-[#8ca0bc] text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                   {profile.aboutParagraph1}
                 </p>
-                <p className="text-[#8ca0bc] text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                   {profile.aboutParagraph2}
                 </p>
               </div>
@@ -66,35 +66,35 @@ export default function AboutSection() {
               {/* Quick info */}
               <div className="mt-6 space-y-2">
                 <div className="flex items-center gap-3 text-sm">
-                  <span className="text-[#4a5c74] w-20 shrink-0 text-xs uppercase tracking-wider">
+                  <span className="w-20 shrink-0 text-xs uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>
                     Location
                   </span>
-                  <span className="text-[#e2eaf4] text-sm">{profile.location}</span>
+                  <span className="text-sm" style={{ color: "var(--text-primary)" }}>{profile.location}</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <span className="text-[#4a5c74] w-20 shrink-0 text-xs uppercase tracking-wider">
+                  <span className="w-20 shrink-0 text-xs uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>
                     Email
                   </span>
                   <a
                     href={`mailto:${profile.email}`}
-                    className="text-[#22d3ee] hover:text-white transition-colors text-sm"
-                  >
+                  className="text-sm hover:text-white transition-colors"
+                    style={{ color: "var(--cyan)" }}>
                     {profile.email}
                   </a>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <span className="text-[#4a5c74] w-20 shrink-0 text-xs uppercase tracking-wider">
+                  <span className="w-20 shrink-0 text-xs uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>
                     Status
                   </span>
                   <span className="text-sm flex items-center gap-1.5">
                     <span
                       className="w-1.5 h-1.5 rounded-full animate-glow-pulse"
                       style={{
-                        background: "#22d3ee",
-                        boxShadow: "0 0 6px #22d3ee",
+                        background: "var(--cyan)",
+                        boxShadow: "0 0 6px var(--cyan-glow)",
                       }}
                     />
-                    <span className="text-[#e2eaf4]">
+                    <span style={{ color: "var(--text-primary)" }}>
                       Open to opportunities
                     </span>
                   </span>
@@ -113,7 +113,7 @@ export default function AboutSection() {
             className="h-[1px] mb-10"
             style={{
               background:
-                "linear-gradient(90deg, rgba(34,211,238,0.2), rgba(168,85,247,0.15), transparent)",
+                "linear-gradient(90deg, var(--border-subtle), var(--border-purple), transparent)",
             }}
           />
 

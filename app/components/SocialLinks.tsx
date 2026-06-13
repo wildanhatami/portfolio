@@ -77,25 +77,23 @@ export default function SocialLinks({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          className={`${padding} rounded-xl text-[#8ca0bc] hover:text-white transition-all duration-200 hover:scale-110`}
+          className={`${padding} rounded-xl transition-all duration-200 hover:scale-110`}
           style={{
-            background:
-              variant === "pill"
-                ? "rgba(255,255,255,0.06)"
-                : "rgba(255,255,255,0.04)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            color: "var(--text-secondary)",
+            background: "var(--badge-subtle)",
+            border: "1px solid var(--border-subtle)",
           }}
           onMouseEnter={(e) => {
             const el = e.currentTarget as HTMLAnchorElement;
-            el.style.borderColor = `${color}40`;
+            el.style.borderColor = `${color}50`;
             el.style.boxShadow = `0 0 10px ${color}30`;
             el.style.color = color;
           }}
           onMouseLeave={(e) => {
             const el = e.currentTarget as HTMLAnchorElement;
-            el.style.borderColor = "rgba(255,255,255,0.08)";
+            el.style.borderColor = "var(--border-subtle)";
             el.style.boxShadow = "none";
-            el.style.color = "#8ca0bc";
+            el.style.color = "var(--text-secondary)";
           }}
         >
           <Icon size={iconSize} />
