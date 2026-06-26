@@ -57,29 +57,6 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // ── PROJECT 1 ──────────────────────────────────────────────
-  {
-    id: "desa-digital",
-    name: "KMS Desa Digital Indonesia",
-    shortName: "Desa Digital Indonesia",
-    category: "Web",
-    description:
-      "A Knowledge Management System platform to support the management of knowledge and information related to digital villages in Indonesia.",
-    tech: ["Laravel", "PHP", "MySQL", "Bootstrap"],
-    githubUrl: "",
-    liveUrl: "",
-    thumbnail: "/images/projects/desa-digital.jpg",
-    featured: true,
-    statusLabel: "Private Project",
-    longDescription:
-      "KMS Desa Digital Indonesia adalah platform Knowledge Management System yang dirancang untuk mendukung pengelolaan pengetahuan dan informasi terkait desa digital di Indonesia. Platform ini membantu warga dan perangkat desa dalam mengakses, berbagi, dan mengelola informasi secara terstruktur.",
-    highlights: [
-      "Manajemen pengetahuan berbasis kategori dan tag",
-      "Antarmuka pengguna yang ramah dan responsif",
-      "Sistem pencarian konten yang efisien",
-      "Integrasi dengan kebutuhan desa digital Indonesia",
-    ],
-  },
 
   // ── PROJECT 2 ──────────────────────────────────────────────
   {
@@ -162,22 +139,6 @@ export const projects: Project[] = [
   },
 
 
-
-  // ── PROJECT 9 ──────────────────────────────────────────────
-  {
-    id: "baserow-setup",
-    name: "Baserow Setup",
-    category: "Tools",
-    description:
-      "Configuration and exploration of Baserow to support more structured data management.",
-    tech: ["Baserow", "No-code", "Database"],
-    githubUrl: "https://github.com/wildanhatami/baserow-setup",
-    liveUrl: "",
-    thumbnail: "/images/projects/baserow-setup.jpg",
-    objectFit: "contain",
-    featured: false,
-    githubRepo: "wildanhatami/baserow-setup",
-  },
 
   // ── PROJECT 10 ──────────────────────────────────────────────
   {

@@ -30,56 +30,42 @@ My main interests span:
 
 ## 🚀 Featured Projects
 
-### 1. [KMS Desa Digital Indonesia](https://portfolio-muhammadwildanhatami.vercel.app/work/desa-digital) — *Private Project*
-> **Category:** Web · **Tech:** Laravel, PHP, MySQL, Bootstrap
->
-> A Knowledge Management System platform built to support digital village management in Indonesia. Designed to help village residents and officials access, share, and manage information in a structured and accessible way.
-
----
-
-### 2. [IPB Logicore Help Center](https://ipb-logicore-help-center.vercel.app) — [GitHub](https://github.com/wildanhatami/ipb-logicore-help-center)
+### 1. [IPB Logicore Help Center](https://ipb-logicore-help-center.vercel.app) — [GitHub](https://github.com/wildanhatami/ipb-logicore-help-center)
 > **Category:** Web · **Tech:** React, Tailwind CSS, Vercel
 >
 > A help center website designed to help users find information and guidance on using services more efficiently. Built collaboratively and deployed on Vercel.
 
 ---
 
-### 3. [Face Mask Classification CNN](https://github.com/wildanhatami/face-mask-classification-cnn)
+### 2. [Face Mask Classification CNN](https://github.com/wildanhatami/face-mask-classification-cnn)
 > **Category:** Data & AI · **Tech:** Python, Jupyter Notebook, CNN, HOG-SVM, Deep Learning
 >
 > Classification of face mask usage conditions on facial images using HOG-SVM and Convolutional Neural Network (CNN) — Final Project for Digital Image Recognition IPB 2026.
 
 ---
 
-### 4. [Dry Bean Classification ANN](https://github.com/wildanhatami/dry-bean-classification-ann)
+### 3. [Dry Bean Classification ANN](https://github.com/wildanhatami/dry-bean-classification-ann)
 > **Category:** Data & AI · **Tech:** Python, Jupyter Notebook, ANN, Machine Learning
 >
 > Classification of seven dry bean varieties using Artificial Neural Network (ANN) based on morphological features — Final Project for Computational Intelligence IPB 2026.
 
 ---
 
-### 5. [Crop Harvest Predictor (Decision Tree)](https://github.com/wildanhatami/crop-harvest-predictor-dt)
+### 4. [Crop Harvest Predictor (Decision Tree)](https://github.com/wildanhatami/crop-harvest-predictor-dt)
 > **Category:** Data & AI · **Tech:** Python, Jupyter Notebook, Decision Tree, Scikit-learn
 >
 > A crop harvest prediction project using Decision Tree algorithm to determine harvest feasibility based on agronomic features.
 
 ---
 
-### 6. [Academic Registration System](https://github.com/wildanhatami/academic-registration-system)
+### 5. [Academic Registration System](https://github.com/wildanhatami/academic-registration-system)
 > **Category:** Programming · **Tech:** C++
 >
 > A terminal-based academic registration system implementing core programming concepts — including data structures, OOP principles, and academic data management logic.
 
 ---
 
-### 7. [Baserow Setup](https://github.com/wildanhatami/baserow-setup)
-> **Category:** Tools · **Tech:** Baserow, No-code, Database
->
-> Configuration and exploration of Baserow as an open-source no-code database tool to support more structured data management workflows.
-
----
-
-### 8. [Baserow User Guide](https://github.com/wildanhatami/baserow-user-guide)
+### 6. [Baserow User Guide](https://github.com/wildanhatami/baserow-user-guide)
 > **Category:** Tools · **Tech:** Baserow, No-code, Documentation
 >
 > A comprehensive user guide and documentation for Baserow — an open-source no-code database tool for structured data management workflows.
