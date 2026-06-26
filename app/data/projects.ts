@@ -128,20 +128,7 @@ export const projects: Project[] = [
     githubRepo: "wildanhatami/dry-bean-classification-ann",
   },
 
-  // ── PROJECT 5 ──────────────────────────────────────────────
-  {
-    id: "crop-harvest-predictor",
-    name: "Crop Harvest Predictor",
-    category: "Data & AI",
-    description:
-      "A crop harvest prediction project that determines harvest feasibility based on agronomic features using a machine learning approach.",
-    tech: ["Python", "Jupyter Notebook", "Machine Learning"],
-    githubUrl: "https://github.com/wildanhatami/crop-harvest-predictor",
-    liveUrl: "",
-    thumbnail: "/images/projects/crop-harvest-predictor.jpg",
-    featured: false,
-    githubRepo: "wildanhatami/crop-harvest-predictor",
-  },
+
 
   // ── PROJECT 6 ──────────────────────────────────────────────
   {
@@ -174,20 +161,7 @@ export const projects: Project[] = [
     githubRepo: "wildanhatami/academic-registration-system",
   },
 
-  // ── PROJECT 8 ──────────────────────────────────────────────
-  {
-    id: "course-registration-system",
-    name: "Course Registration System",
-    category: "Programming",
-    description:
-      "A course registration system implementing programming concepts and academic data management.",
-    tech: ["C++"],
-    githubUrl: "https://github.com/wildanhatami/course-registration-system",
-    liveUrl: "",
-    thumbnail: "/images/projects/course-registration-system.jpg",
-    featured: false,
-    githubRepo: "wildanhatami/course-registration-system",
-  },
+
 
   // ── PROJECT 9 ──────────────────────────────────────────────
   {

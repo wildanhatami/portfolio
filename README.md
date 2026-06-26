@@ -58,42 +58,28 @@ My main interests span:
 
 ---
 
-### 5. [Crop Harvest Predictor](https://github.com/wildanhatami/crop-harvest-predictor)
-> **Category:** Data & AI · **Tech:** Python, Jupyter Notebook, Machine Learning
->
-> A machine learning project that predicts crop harvest feasibility based on agronomic features. Trained using classification algorithms to support data-driven agricultural decisions.
-
----
-
-### 6. [Crop Harvest Predictor (Decision Tree)](https://github.com/wildanhatami/crop-harvest-predictor-dt)
+### 5. [Crop Harvest Predictor (Decision Tree)](https://github.com/wildanhatami/crop-harvest-predictor-dt)
 > **Category:** Data & AI · **Tech:** Python, Jupyter Notebook, Decision Tree, Scikit-learn
 >
 > A crop harvest prediction project using Decision Tree algorithm to determine harvest feasibility based on agronomic features.
 
 ---
 
-### 7. [Academic Registration System](https://github.com/wildanhatami/academic-registration-system)
+### 6. [Academic Registration System](https://github.com/wildanhatami/academic-registration-system)
 > **Category:** Programming · **Tech:** C++
 >
 > A terminal-based academic registration system implementing core programming concepts — including data structures, OOP principles, and academic data management logic.
 
 ---
 
-### 8. [Course Registration System](https://github.com/wildanhatami/course-registration-system)
-> **Category:** Programming · **Tech:** C++
->
-> A terminal-based course registration system implementing core programming concepts — including data structures, OOP principles, and academic data management logic.
-
----
-
-### 9. [Baserow Setup](https://github.com/wildanhatami/baserow-setup)
+### 7. [Baserow Setup](https://github.com/wildanhatami/baserow-setup)
 > **Category:** Tools · **Tech:** Baserow, No-code, Database
 >
 > Configuration and exploration of Baserow as an open-source no-code database tool to support more structured data management workflows.
 
 ---
 
-### 10. [Baserow User Guide](https://github.com/wildanhatami/baserow-user-guide)
+### 8. [Baserow User Guide](https://github.com/wildanhatami/baserow-user-guide)
 > **Category:** Tools · **Tech:** Baserow, No-code, Documentation
 >
 > A comprehensive user guide and documentation for Baserow — an open-source no-code database tool for structured data management workflows.
