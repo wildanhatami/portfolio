@@ -36,7 +36,7 @@ export interface Project {
   /**
    * Path to thumbnail image.
    * Place thumbnail at: public/images/projects/<filename>
-   * Recommended: 1280×720px, 16:9 ratio, JPG/PNG/WebP
+   * Recommended: 1280x720px, 16:9 ratio, JPG/PNG/WebP
    */
   thumbnail: string;
   /** Set to true to show in the Featured Projects section on homepage */
@@ -65,9 +65,9 @@ export const projects: Project[] = [
     category: "Web",
     description:
       "A Knowledge Management System platform to support the management of knowledge and information related to digital villages in Indonesia.",
-    tech: ["Add technologies used"],
-    githubUrl: "", // Not available on personal GitHub yet
-    liveUrl: "",   // No live demo yet
+    tech: ["Laravel", "PHP", "MySQL", "Bootstrap"],
+    githubUrl: "",
+    liveUrl: "",
     thumbnail: "/images/projects/desa-digital.jpg",
     featured: true,
     statusLabel: "Private Project",
@@ -89,14 +89,46 @@ export const projects: Project[] = [
     description:
       "A help center website designed to help users find information and guidance on using services in a more structured way.",
     tech: ["React", "Tailwind CSS", "Vercel"],
-    githubUrl: "https://github.com/Cokgdsatria/IPB_Logicore_Help_Center",
+    githubUrl: "https://github.com/wildanhatami/ipb-logicore-help-center",
     liveUrl: "https://ipb-logicore-help-center.vercel.app",
     thumbnail: "/images/projects/logicore-help-center.jpg",
     featured: true,
-    githubRepo: "Cokgdsatria/IPB_Logicore_Help_Center",
+    githubRepo: "wildanhatami/ipb-logicore-help-center",
   },
 
   // ── PROJECT 3 ──────────────────────────────────────────────
+  {
+    id: "face-mask-classification-cnn",
+    name: "Face Mask Classification CNN",
+    shortName: "Face Mask CNN",
+    category: "Data & AI",
+    description:
+      "Classification of face mask usage conditions using HOG-SVM and CNN — Final Project for Digital Image Recognition IPB 2026.",
+    tech: ["Python", "Jupyter Notebook", "CNN", "HOG-SVM", "Deep Learning"],
+    githubUrl: "https://github.com/wildanhatami/face-mask-classification-cnn",
+    liveUrl: "",
+    thumbnail: "/images/projects/face-mask-classification-cnn.jpg",
+    featured: true,
+    githubRepo: "wildanhatami/face-mask-classification-cnn",
+  },
+
+  // ── PROJECT 4 ──────────────────────────────────────────────
+  {
+    id: "dry-bean-classification-ann",
+    name: "Dry Bean Classification ANN",
+    shortName: "Dry Bean ANN",
+    category: "Data & AI",
+    description:
+      "Classification of seven dry bean varieties using Artificial Neural Network (ANN) based on morphological features — Final Project for Computational Intelligence IPB 2026.",
+    tech: ["Python", "Jupyter Notebook", "ANN", "Machine Learning"],
+    githubUrl: "https://github.com/wildanhatami/dry-bean-classification-ann",
+    liveUrl: "",
+    thumbnail: "/images/projects/dry-bean-classification-ann.jpg",
+    featured: false,
+    githubRepo: "wildanhatami/dry-bean-classification-ann",
+  },
+
+  // ── PROJECT 5 ──────────────────────────────────────────────
   {
     id: "crop-harvest-predictor",
     name: "Crop Harvest Predictor",
@@ -107,27 +139,42 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/wildanhatami/crop-harvest-predictor",
     liveUrl: "",
     thumbnail: "/images/projects/crop-harvest-predictor.jpg",
-    featured: true,
+    featured: false,
     githubRepo: "wildanhatami/crop-harvest-predictor",
   },
 
-  // ── PROJECT 4 ──────────────────────────────────────────────
+  // ── PROJECT 6 ──────────────────────────────────────────────
   {
-    id: "baserow-setup",
-    name: "Baserow Setup",
-    category: "Tools",
+    id: "crop-harvest-predictor-dt",
+    name: "Crop Harvest Predictor (Decision Tree)",
+    shortName: "Crop Harvest DT",
+    category: "Data & AI",
     description:
-      "Configuration and exploration of Baserow to support more structured data management.",
-    tech: ["Add technologies used"],
-    githubUrl: "https://github.com/wildanhatami/baserow-setup",
+      "A crop harvest prediction project using Decision Tree algorithm to determine harvest feasibility based on agronomic features.",
+    tech: ["Python", "Jupyter Notebook", "Decision Tree", "Scikit-learn"],
+    githubUrl: "https://github.com/wildanhatami/crop-harvest-predictor-dt",
     liveUrl: "",
-    thumbnail: "/images/projects/baserow-setup.jpg",
-    objectFit: "contain",
+    thumbnail: "/images/projects/crop-harvest-predictor-dt.jpg",
     featured: false,
-    githubRepo: "wildanhatami/baserow-setup",
+    githubRepo: "wildanhatami/crop-harvest-predictor-dt",
   },
 
-  // ── PROJECT 5 ──────────────────────────────────────────────
+  // ── PROJECT 7 ──────────────────────────────────────────────
+  {
+    id: "academic-registration-system",
+    name: "Academic Registration System",
+    category: "Programming",
+    description:
+      "A terminal-based academic registration system implementing core programming concepts including data structures, OOP principles, and academic data management logic.",
+    tech: ["C++"],
+    githubUrl: "https://github.com/wildanhatami/academic-registration-system",
+    liveUrl: "",
+    thumbnail: "/images/projects/academic-registration-system.jpg",
+    featured: false,
+    githubRepo: "wildanhatami/academic-registration-system",
+  },
+
+  // ── PROJECT 8 ──────────────────────────────────────────────
   {
     id: "course-registration-system",
     name: "Course Registration System",
@@ -140,6 +187,38 @@ export const projects: Project[] = [
     thumbnail: "/images/projects/course-registration-system.jpg",
     featured: false,
     githubRepo: "wildanhatami/course-registration-system",
+  },
+
+  // ── PROJECT 9 ──────────────────────────────────────────────
+  {
+    id: "baserow-setup",
+    name: "Baserow Setup",
+    category: "Tools",
+    description:
+      "Configuration and exploration of Baserow to support more structured data management.",
+    tech: ["Baserow", "No-code", "Database"],
+    githubUrl: "https://github.com/wildanhatami/baserow-setup",
+    liveUrl: "",
+    thumbnail: "/images/projects/baserow-setup.jpg",
+    objectFit: "contain",
+    featured: false,
+    githubRepo: "wildanhatami/baserow-setup",
+  },
+
+  // ── PROJECT 10 ──────────────────────────────────────────────
+  {
+    id: "baserow-user-guide",
+    name: "Baserow User Guide",
+    category: "Tools",
+    description:
+      "A comprehensive user guide and documentation for Baserow — an open-source no-code database tool for structured data management workflows.",
+    tech: ["Baserow", "No-code", "Documentation"],
+    githubUrl: "https://github.com/wildanhatami/baserow-user-guide",
+    liveUrl: "",
+    thumbnail: "/images/projects/baserow-user-guide.jpg",
+    objectFit: "contain",
+    featured: false,
+    githubRepo: "wildanhatami/baserow-user-guide",
   },
 ];
 
