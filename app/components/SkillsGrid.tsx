@@ -49,21 +49,24 @@ const iconMap: Record<string, React.ElementType> = {
 export default function SkillsGrid() {
   const { theme } = useTheme();
 
-  // Separate skills into 3 logical tracks
+  // Separate skills into 3 logical tracks with titles
   const tracks = [
     {
+      title: "Languages & Core",
       direction: "normal",
       items: skills.filter((s) =>
         ["html", "css", "javascript", "typescript", "python", "cpp", "mysql", "scikitlearn"].includes(s.id)
       ),
     },
     {
+      title: "Frameworks & Libraries",
       direction: "reverse",
       items: skills.filter((s) =>
         ["react", "nextjs", "tailwindcss", "alpinejs", "nodejs", "express"].includes(s.id)
       ),
     },
     {
+      title: "Tools & Environments",
       direction: "normal",
       items: skills.filter((s) =>
         ["git", "github", "vercel", "jupyter", "figma"].includes(s.id)
@@ -81,15 +84,21 @@ export default function SkillsGrid() {
       </h3>
       
       {/* Marquee Tracks */}
-      <div className="space-y-4">
+      <div className="space-y-8">
         {tracks.map((track, trackIndex) => (
-          <div
-            key={trackIndex}
-            className={`flex w-max gap-3 py-1 ${
-              track.direction === "reverse" ? "animate-marquee-reverse" : "animate-marquee"
-            }`}
-          >
-            {[...track.items, ...track.items].map((skill, i) => {
+          <div key={trackIndex}>
+            <h4
+              className="text-xs font-bold uppercase tracking-widest mb-3 pl-4"
+              style={{ color: "var(--cyan)" }}
+            >
+              {track.title}
+            </h4>
+            <div
+              className={`flex w-max gap-3 py-1 ${
+                track.direction === "reverse" ? "animate-marquee-reverse" : "animate-marquee"
+              }`}
+            >
+              {track.items.map((skill, i) => {
               const isTargetSkill = skill.id === "nextjs" || skill.id === "github";
               const skillColor = theme === "light" && isTargetSkill ? "#000000" : skill.color;
 
@@ -138,6 +147,7 @@ export default function SkillsGrid() {
                 </div>
               );
             })}
+          </div>
           </div>
         ))}
       </div>
