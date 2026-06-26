@@ -159,7 +159,7 @@ export const projects: Project[] = [
   // ── PROJECT 11 ──────────────────────────────────────────────
   {
     id: "campus-mentoring-scheduler",
-    name: "Sistem Bimbingan Kampus",
+    name: "Campus Mentoring Scheduler",
     shortName: "Mentoring Scheduler",
     category: "Web",
     description:
