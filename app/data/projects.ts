@@ -155,6 +155,22 @@ export const projects: Project[] = [
     featured: false,
     githubRepo: "wildanhatami/baserow-user-guide",
   },
+
+  // ── PROJECT 11 ──────────────────────────────────────────────
+  {
+    id: "campus-mentoring-scheduler",
+    name: "Sistem Bimbingan Kampus",
+    shortName: "Mentoring Scheduler",
+    category: "Web",
+    description:
+      "A full-stack web application for scheduling and managing campus mentoring sessions, featuring dedicated dashboards for students and lecturers.",
+    tech: ["Node.js", "Express.js", "Alpine.js", "MySQL"],
+    githubUrl: "https://github.com/wildanhatami/campus-mentoring-scheduler",
+    liveUrl: "https://rpl-1-0.onrender.com",
+    thumbnail: "/images/projects/campus-mentoring-scheduler.png",
+    featured: true,
+    githubRepo: "wildanhatami/campus-mentoring-scheduler",
+  },
 ];
 
 /** Helper: get only featured projects */
