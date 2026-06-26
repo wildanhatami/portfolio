@@ -325,3 +325,51 @@ button {
   animation: shimmer 1.6s ease-in-out infinite;
 }
 
+[data-theme="light"] .skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(8, 145, 178, 0.06) 0%,
+    rgba(8, 145, 178, 0.13) 50%,
+    rgba(8, 145, 178, 0.06) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+/* ============================================================
+   PROJECT DETAIL — THEME-ADAPTIVE UTILITIES
+   ============================================================ */
+.back-link {
+  color: var(--text-secondary);
+}
+.back-link:hover {
+  color: var(--cyan);
+}
+
+.tech-tag {
+  color: var(--text-secondary);
+  background: var(--badge-subtle);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-ghost {
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+}
+.btn-ghost:hover {
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border-color: var(--border-cyan);
+}
+
+.btn-cyan {
+  color: var(--cyan);
+  background: var(--badge-bg);
+  border: 1px solid var(--border-cyan);
+}
+.btn-cyan:hover {
+  color: var(--text-primary);
+  background: var(--cyan);
+}
+

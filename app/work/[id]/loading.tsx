@@ -11,12 +11,12 @@ export default function Loading() {
         {/* Header skeleton */}
         <div className="mb-8">
           <div className="h-6 w-16 rounded-full mb-3 skeleton-shimmer" />
-          <div className="h-10 w-3/4 rounded-lg mb-3 skeleton-shimmer" />
+          <div className="h-8 sm:h-10 w-3/4 rounded-lg mb-3 skeleton-shimmer" />
           <div className="h-4 w-full rounded mb-2 skeleton-shimmer" />
           <div className="h-4 w-2/3 rounded mb-5 skeleton-shimmer" />
 
           {/* Tech tags */}
-          <div className="flex gap-2 mb-6">
+          <div className="flex flex-wrap gap-2 mb-6">
             {[60, 80, 70].map((w, i) => (
               <div
                 key={i}
@@ -35,15 +35,15 @@ export default function Loading() {
         {/* Thumbnail skeleton */}
         <div
           className="w-full rounded-xl mb-8 skeleton-shimmer"
-          style={{ height: "clamp(200px, 40vw, 420px)" }}
+          style={{ height: "clamp(180px, 38vw, 420px)" }}
         />
 
         {/* Content skeleton */}
         <div
-          className="rounded-xl p-6 sm:p-8"
+          className="rounded-xl p-5 sm:p-8"
           style={{
-            background: "rgba(8,20,45,0.6)",
-            border: "1px solid rgba(34,211,238,0.1)",
+            background: "var(--bg-card)",
+            border: "1px solid var(--border-subtle)",
           }}
         >
           <div className="h-4 w-24 rounded mb-6 skeleton-shimmer" />
